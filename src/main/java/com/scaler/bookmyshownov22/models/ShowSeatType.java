@@ -12,7 +12,8 @@ import javax.persistence.*;
 public class ShowSeatType extends BaseModel {
     @ManyToOne
     private Show show;
-    @ManyToOne
+
+    @Enumerated(EnumType.ORDINAL)
     private SeatType seatType;
     private double price;
 }

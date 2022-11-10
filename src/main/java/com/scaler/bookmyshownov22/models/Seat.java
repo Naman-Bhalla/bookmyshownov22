@@ -3,10 +3,7 @@ package com.scaler.bookmyshownov22.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -14,13 +11,15 @@ import javax.persistence.ManyToOne;
 public class Seat extends BaseModel {
     private String name;
 
-    @ManyToOne
+    @Enumerated(EnumType.ORDINAL)
     private SeatType seatType;
 
     private int row;
+
+    @Column(name = "clmn")
     private int column;
 
-    @ManyToOne
+    @Enumerated(EnumType.ORDINAL)
     private SeatStatus seatStatus;
 
 }

@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Getter
 @Setter
-//@Table(name = "users")
+@Table(name = "users")
 public class User extends BaseModel {
     private String email;
 }

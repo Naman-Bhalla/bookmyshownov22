@@ -18,6 +18,11 @@ public class Auditorium extends BaseModel {
     @OneToMany
     private List<Seat> seats;
 
-    @ManyToMany
+    @ElementCollection
+    @Enumerated(EnumType.ORDINAL)
     private List<Feature> auditoriumFeatures;
 }
+
+// auditoriums                        // auditorium_features
+// id | name | feature_id             //  id | value
+// 1 | audi-1 |
